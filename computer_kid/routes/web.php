@@ -15,5 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/simple','simpleController@index');
+Route::get('/simple','simpleController@index')->name('simple');
 Route::get('/simple_questions/{id}','simpleController@question')->name("question");
+Route::get('/success','simpleController@success')->name("success");
+Route::get('/error/{correct_answer}','simpleController@error')->name("error");
