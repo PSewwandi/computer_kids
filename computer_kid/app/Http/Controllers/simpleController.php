@@ -20,9 +20,9 @@ class simpleController extends Controller
         return view('simple_questions',compact('question','answers','q_id'));
     }
     public function success(){
-        return view('success');
+        return view('successSimple');
     }
     public function error($correct_answer){
-        return view('error',compact('correct_answer'));
+        return view('errorSimple',compact('correct_answer'));
     }
 }

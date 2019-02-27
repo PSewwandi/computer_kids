@@ -8,17 +8,17 @@
 
 $(document).ready(function(){
     <?php 
-        $a=DB::table('answer_simple')->where('q_id',$q_id)->pluck('correct');
+        $a=DB::table('answer_intermediate')->where('q_id',$q_id)->pluck('correct');
     ?>
     var correct_answer= "<?php echo $a[0]; ?>";
         $("input[type='button']").click(function(){
         	var radioValue = $("input[name='answer']:checked").val();
             var x=radioValue==correct_answer;
             if(x){
-                window.location='http://127.0.0.1:8000/successSimple';
+                window.location='http://127.0.0.1:8000/successIntermediate';
             
             }else{
-                window.location='http://127.0.0.1:8000/errorSimple/'+correct_answer;
+                window.location='http://127.0.0.1:8000/errorIntermediate/'+correct_answer;
             }
         });
     });
@@ -30,9 +30,9 @@ $(document).ready(function(){
     <div class="container">
         <div class="row">
             <br><br><br><br><br><br>
-            <div class="col-md-1"></div>
-            <div class="col-md-9">
-                <h1>{{$question[0]}}</h1>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h3>{{$question[0]}}</h3>
                 <br><br><br>
                 <?php
                 $i=0;
@@ -43,15 +43,16 @@ $(document).ready(function(){
                 <?php
                 }
                 ?>
+                <br><br><br><br><br><br>
                 <input type="button" value="submit" class="btn btn-success">
                 <div class="check_mark">
-  <div class="sa-icon sa-success animate">
-    <span class="sa-line sa-tip animateSuccessTip"></span>
-    <span class="sa-line sa-long animateSuccessLong"></span>
-    <div class="sa-placeholder"></div>
-    <div class="sa-fix"></div>
-  </div>
-</div>
+                    <div class="sa-icon sa-success animate">
+                        <span class="sa-line sa-tip animateSuccessTip"></span>
+                        <span class="sa-line sa-long animateSuccessLong"></span>
+                        <div class="sa-placeholder"></div>
+                        <div class="sa-fix"></div>
+                    </div>
+                </div>
                 <br><br><br><br><br><br><br><br><br><br>
             </div>
         </div>

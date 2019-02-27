@@ -10,6 +10,6 @@
             @section('content')
                 @show
 
-        <!-- @include('main/layouts/footer') -->
+        @include('main/layouts/footer')
     </body>
 </html>

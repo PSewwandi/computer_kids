@@ -6,7 +6,7 @@
 @endsection
 @section('content')
 <div class="container">
-    <center><img src="{{url('main\images\Basic-parts-of-a-Computer.jpg')}}" style="width:50%" alt="Image"/></center>
+    <center><img src="{{url('main\images\image3.jpg')}}" style="width:30%" alt="Image"/></center>
 </div>
 @foreach($parts as $part)
 <div class="details-description"  style="background:#6495ED;">
@@ -14,22 +14,22 @@
     <div class="panel">
         <div class="col-md-6">
             <?php
-                $numberOfQuestions=DB::table('simple_questions')->where('part_id',$part->id)->count();
-                $questions=DB::table('simple_questions')->where('part_id',$part->id)->get();
-                $question=DB::table('simple_questions')->where('part_id',$part->id)->pluck('id');
+                $numberOfQuestions=DB::table('advance_questions')->where('part_id',$part->id)->count();
+                $questions=DB::table('advance_questions')->where('part_id',$part->id)->get();
+                $question=DB::table('advance_questions')->where('part_id',$part->id)->pluck('id');
                 
                 $i=0;
                 foreach($questions as $q){
                     $i++?>
                 <br>
-                    <a href='{{ route('questionSimple',[$q->id])}}' role="button" class="btn btn-info btn-block">Question {{$i}}</a><?php
+                    <a href='{{ route('questionAdvance',[$q->id])}}' role="button" class="btn btn-info btn-block">Question {{$i}}</a><?php
                 }
             ?>
             <br>
         </div>
         <div class="col-md-6">
             <div class="thumbnail"> 
-                <img src="main/images/simple/{{$part->id}}.jpg" alt={{$part->name}} />
+                <img src="main/images/advance/{{$part->id}}.jpg" alt={{$part->name}} />
             </div>
         </div>
     </div>
