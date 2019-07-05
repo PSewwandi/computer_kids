@@ -13,6 +13,7 @@
     <button class="accordion">{{$part->name}}</button>
     <div class="panel">
         <div class="col-md-6">
+            <p>{{$part->description}}</p>
             <?php
                 $numberOfQuestions=DB::table('simple_questions')->where('part_id',$part->id)->count();
                 $questions=DB::table('simple_questions')->where('part_id',$part->id)->get();

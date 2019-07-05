@@ -13,6 +13,7 @@
     <button class="accordion">{{$part->name}}</button>
     <div class="panel">
         <div class="col-md-6">
+        <p>{{$part->description}}</p>
             <?php
                 $numberOfQuestions=DB::table('intermediate_questions')->where('part_id',$part->id)->count();
                 $questions=DB::table('intermediate_questions')->where('part_id',$part->id)->get();
@@ -29,7 +30,7 @@
         </div>
         <div class="col-md-6">
             <div class="thumbnail"> 
-                <img src="main/images/intermediate/{{$part->id}}.jpg" height="10" width="10" alt={{$part->name}} />
+                <img src="main/images/intermediate/{{$part->id}}.jpg" alt={{$part->name}} />
             </div>
         </div>
     </div>

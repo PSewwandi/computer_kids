@@ -17,9 +17,9 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Questions
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                            <li><a href="#">Simple</a></li>
-                            <li><a href="#">Intermediate</a></li>
-                            <li><a href="#">Advanced</a></li>
+                            <li><a href="/simple">Simple</a></li>
+                            <li><a href="/intermediate">Intermediate</a></li>
+                            <li><a href="advance">Advanced</a></li>
                             </ul>
                         </li>
                     <li><a href="#">FAQ</a></li> 
